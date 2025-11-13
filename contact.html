@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Mô phỏng Tìm kiếm nhị phân</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- icon -->
+    <link rel="icon" href="./myico.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Lớp phủ cho hiệu ứng background -->
+    <div id="grid-background-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="container navigation">
+        <a href="./index.html" class="logo">BinarySearch Viz</a>
+        <ul>
+            <li><a href="./index.html">Trang chủ</a></li>
+            <li><a href="./index.html#simulator">Mô phỏng</a></li>
+            <li><a href="./askAI.html">Đặt câu hỏi</a></li>
+            <li><a href="./about.html">Về dự án</a></li>
+            <li><a href="./contact.html" class="active">Liên hệ</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Mở/đóng menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+    
+    <main>
+        <!-- Header -->
+        <header class="container header">
+            <h1>Thông tin liên hệ</h1>
+            <p>Mọi thắc mắc hoặc góp ý, vui lòng liên hệ với tôi qua các thông tin dưới đây.</p>
+        </header>
+
+        <!-- Section thông tin liên hệ -->
+        <section id="contact-info" class="container content-card">
+            <h2>Kênh liên lạc</h2>
+            <ul class="contact-list">
+                <li>
+                    <span>📧</span>
+                    <div>
+                        <strong>Email</strong>
+                        <a href="mailto:thanhvanpycoder@gmail.com">thanhvanpycoder@gmail.com</a> (Ưu tiên)
+                        <br>
+                        <a href="mailto:ntvana25033@cusc.ctu.edu.vn">ntvana25033@cusc.ctu.edu.vn</a> (Học tập)
+                    </div>
+                </li>
+                <li>
+                    <span>📞</span>
+                    <div>
+                        <strong>Điện thoại</strong>
+                        <a href="tel:0799898050">0799 898 050</a>
+                    </div>
+                </li>
+                 <li>
+                    <span>💻</span>
+                    <div>
+                        <strong>Mã nguồn (GitHub)</strong>
+                        <a href="https://github.com/thanhvan-dev/binary-search-viz" target="_blank">Xem dự án trên GitHub</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    
+    <!--Footer-->
+    <footer class="container footer">
+        <p>&copy; 2025 Nguyễn Thành Văn. All rights reserved.</p>
+    </footer>
+
+    <!-- Script cho hiệu ứng rê chuột -->
+    <script>
+        const overlay = document.getElementById('grid-background-overlay');
+        window.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            overlay.style.setProperty('--mouse-x', `${clientX}px`);
+            overlay.style.setProperty('--mouse-y', `${clientY}px`);
+        });
+    </script>
+    
+    <!-- Script cho menu mobile -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.navigation');
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('mobile-menu-open');
+        });
+    </script>
+</body>
+</html>
